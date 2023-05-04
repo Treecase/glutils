@@ -132,7 +132,7 @@ public:
             target,
             offset * sizeof(T),
             count * sizeof(T),
-            data.data() + offset);
+            data.data());
     }
 };
 
