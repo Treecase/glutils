@@ -1,0 +1,7 @@
+GLUtils NEWS
+
+* Noteworthy changes in release 1.0.1 (2023-11-22) [stable]
+
+Bumped minimum CMake version to 3.13.
+
+Added config.hpp header file: Defines GLUtils version constants.

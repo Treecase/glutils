@@ -1,6 +1,6 @@
 /**
  * glUtil.hpp - OpenGL utilities.
- * Copyright (C) 2022 Trevor Last
+ * Copyright (C) 2022-2023 Trevor Last
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -16,8 +16,10 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef _GLUTILS_HPP
-#define _GLUTILS_HPP
+#ifndef GLUTILS_HPP
+#define GLUTILS_HPP
+
+#include "config.hpp"
 
 #include <GL/glew.h>
 #include <glm/glm.hpp>

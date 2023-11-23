@@ -1,4 +1,4 @@
-# Copyright (C) 2022 Trevor Last
+# Copyright (C) 2022-2023 Trevor Last
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -13,6 +13,8 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+configure_file(config.hpp.in "${PROJECT_BINARY_DIR}/include/config.hpp")
+
 add_library(glutils STATIC
     Buffer.cpp
     Program.cpp
@@ -20,5 +22,5 @@ add_library(glutils STATIC
     Texture.cpp
     VertexArray.cpp
 )
-target_include_directories(glutils PUBLIC ../)
+target_include_directories(glutils PUBLIC ../ "${PROJECT_BINARY_DIR}/include")
 target_link_libraries(glutils PUBLIC glm::glm GLEW::GLEW)
