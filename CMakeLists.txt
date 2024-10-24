@@ -1,4 +1,4 @@
-# Copyright (C) 2022-2023 Trevor Last
+# Copyright (C) 2022-2024 Trevor Last
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,22 +17,14 @@ cmake_minimum_required(VERSION 3.13)
 
 set(GLUTILS_VERSION_MAJOR 1)
 set(GLUTILS_VERSION_MINOR 0)
-set(GLUTILS_VERSION_PATCH 1)
+set(GLUTILS_VERSION_PATCH 2)
 set(GLUTILS_VERSION ${GLUTILS_VERSION_MAJOR}.${GLUTILS_VERSION_MINOR}.${GLUTILS_VERSION_PATCH})
 
 project(GLUtils VERSION ${GLUTILS_VERSION} LANGUAGES CXX)
 
 
-add_subdirectory(extern/glm)
-if(MSVC)
-    # TODO: better way to do this
-    add_library(glew INTERFACE)
-    target_include_directories(glew INTERFACE extern/glew-2.1.0/include)
-    target_link_libraries(glew INTERFACE "${PROJECT_SOURCE_DIR}/extern/glew-2.1.0/lib/Release/x64/glew32.lib")
-    add_library(GLEW::GLEW ALIAS glew)
-else()
-    find_package(GLEW REQUIRED)
-endif()
+find_package(glm 1.0 REQUIRED)
+find_package(GLEW REQUIRED)
 
 add_subdirectory(glutils)
 add_library(glutils::glutils ALIAS glutils)
