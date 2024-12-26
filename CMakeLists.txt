@@ -23,7 +23,7 @@ set(GLUTILS_VERSION ${GLUTILS_VERSION_MAJOR}.${GLUTILS_VERSION_MINOR}.${GLUTILS_
 project(GLUtils VERSION ${GLUTILS_VERSION} LANGUAGES CXX)
 
 
-find_package(glm 1.0 REQUIRED)
+find_package(glm 0.9 REQUIRED)
 find_package(GLEW REQUIRED)
 
 add_subdirectory(glutils)
